@@ -42,10 +42,10 @@ from sklearn.feature_extraction.text import CountVectorizer
 st.markdown("<h1 style='color:lightblue;'>Todos à bordo do Titanic?</h1>", unsafe_allow_html=True)
 st.write("---")
 
-# Adicionar imagem no topo
+# Adicionando a imagem do topo
 st.image("https://png.pngtree.com/png-vector/20240722/ourmid/pngtree-titanic-cruise-ship-sail-in-sea-iceberg-in-night-scene-in-png-image_13038983.png", use_column_width=True)
 
-# Definir o estilo da página com imagem de fundo
+# Definindo o estilo da página com imagem de fundo
 st.markdown(
     """
     <style>
@@ -59,16 +59,16 @@ st.markdown(
 )
 
 
-# Adicionar música do arquivo local
-st.audio("songtitanic.mp3")  # Substitua 'songtitanic.mp3' pelo nome do seu arquivo
+# P/ Adicionar música do arquivo local
+st.audio("songtitanic.mp3")  
 
-# Carregar os dados
+# P/ Carregar os dados
 def carregar_dados():
     treino = pd.read_csv('train.csv')
     teste = pd.read_csv('test.csv')
     return treino, teste
 
-# Preprocessar os dados
+# P/ Preprocessar os dados
 def preprocessar_dados(treino, teste):
     treino['Age'] = treino['Age'].fillna(treino['Age'].mean())
     teste['Age'] = teste['Age'].fillna(teste['Age'].mean())

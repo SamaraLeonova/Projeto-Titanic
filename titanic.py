@@ -15,10 +15,10 @@ from nltk.corpus import stopwords
 st.markdown("<h2 style='color:lightblue;'>Preparados para uma aventura no Titanic?</h2>", unsafe_allow_html=True)
 st.write("---")
 
-# Adicionar imagem no topo
+# Imagem do topo
 st.image("https://png.pngtree.com/png-vector/20240722/ourmid/pngtree-titanic-cruise-ship-sail-in-sea-iceberg-in-night-scene-in-png-image_13038983.png", use_column_width=True)
 
-# Definir o estilo da página com imagem de fundo
+# Definindo o estilo da página com imagem de fundo
 st.markdown(
     """
     <style>
@@ -50,16 +50,16 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Adicionar música do arquivo local
+# Música do arquivo local
 st.audio("songtitanic.mp3") 
 
-# Carregar os dados
+# Carregando os dados...
 def carregar_dados():
     treino = pd.read_csv('train.csv')
     teste = pd.read_csv('test.csv')
     return treino, teste
 
-# Preprocessar os dados
+# Preprocessamento dos dados
 def preprocessar_dados(treino, teste):
     treino['Age'] = treino['Age'].fillna(treino['Age'].mean())
     teste['Age'] = teste['Age'].fillna(teste['Age'].mean())
@@ -86,7 +86,7 @@ def preprocessar_dados(treino, teste):
     X_teste.columns = X_teste.columns.astype(str)
     return X, y, X_teste
 
-# Treinar modelo
+# Treinando o modelo
 def treinar_modelo(X, y):
     modelos = {
         'Regressão Logística': LogisticRegression(max_iter=1000),
@@ -154,16 +154,16 @@ def main():
         y_pred_teste, modelo_selecionado = prever_sobrevivencia(modelos, X_teste, opcao)
         teste['Survived'] = y_pred_teste
         
-        # Calcular a acurácia do modelo selecionado no conjunto de treinamento
+        # Calculando a acurácia do modelo selecionado no conjunto de treinamento
         y_train_pred = modelo_selecionado.predict(X)
         acuracia = accuracy_score(y, y_train_pred)
 
-        # Calcular a quantidade total de passageiros, sobreviventes e não sobreviventes
+        # Calculando a quantidade total de passageiros, sobreviventes e não sobreviventes
         total_passageiros = teste.shape[0]
         total_sobreviventes = teste['Survived'].sum()
         total_nao_sobreviventes = total_passageiros - total_sobreviventes
 
-        # Exibir informações destacadas com opacidade ajustada
+        # Exibindo informações destacadas com opacidade ajustada
         st.markdown(
             f"""
             <div style="padding: 10px; background-color: preto; border-radius: 5px;">
@@ -180,7 +180,7 @@ def main():
         st.write("Previsões de Sobrevivência:")
         st.dataframe(teste[['PassengerId', 'Survived']], width=600, height=400)
 
-        # Criar gráfico para visualizar sobreviventes e não sobreviventes
+        # Criando o gráfico para visualizar sobreviventes e não sobreviventes
         df_viz = pd.DataFrame({
             'Categoria': ['Sobreviventes', 'Não Sobreviventes'],
             'Quantidade': [total_sobreviventes, total_nao_sobreviventes]
