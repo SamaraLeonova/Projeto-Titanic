@@ -1,0 +1,23 @@
+{
+    "qual é o nome do navio?": "O navio se chama Titanic.",
+    "quando o titanic afundou?": "O Titanic afundou em 15 de abril de 1912.",
+    "quantos passageiros estavam a bordo?": "Havia cerca de 2.224 passageiros a bordo.",
+    "quantos sobreviveram?": "Aproximadamente 706 passageiros sobreviveram.",
+    "qual era a causa do naufrágio?": "O Titanic colidiu com um iceberg.",
+    "quais eram as classes de passageiros?": "As classes de passageiros eram 1ª classe, 2ª classe e 3ª classe.",
+    "o que é um iceberg?": "Um iceberg é um grande bloco de gelo que se desprendeu de uma geleira.",
+    "quem eram jack e rose?": "Jack e Rose são personagens fictícios do filme Titanic.",
+    "qual é o objetivo do projeto Titanic Machine Learning?": "O objetivo é prever a sobrevivência dos passageiros do Titanic com base em dados disponíveis.",
+    "quais algoritmos de Machine Learning são utilizados?": "Os algoritmos utilizados incluem Regressão Logística, Random Forest e MLP Classifier (Redes Neurais).",
+    "que dados são utilizados para treinar os modelos?": "Os dados utilizados incluem informações sobre idade, gênero, classe de cabine, tarifa e outras características dos passageiros.",
+    "como os dados são pré-processados?": "Os dados são limpos, preenchendo valores ausentes, transformando variáveis categóricas e normalizando valores numéricos.",
+    "o que é a acurácia do modelo?": "A acurácia é uma métrica que indica a proporção de previsões corretas em relação ao total de previsões feitas.",
+    "como a validação do modelo é realizada?": "A validação é realizada utilizando a divisão dos dados em conjuntos de treinamento e validação, avaliando a performance em dados não vistos.",
+    "qual é a importância da engenharia de atributos?": "A engenharia de atributos é crucial para melhorar o desempenho do modelo, transformando dados brutos em características relevantes.",
+    "como a sobrevivência é predita?": "A sobrevivência é predita com base nas características dos passageiros, utilizando o modelo treinado para fazer previsões sobre novos dados.",
+    "o que significa 'overfitting'?": "Overfitting é quando um modelo se ajusta demais aos dados de treinamento, resultando em baixa performance em dados novos.",
+    "quais são as métricas utilizadas para avaliar o modelo?": "As métricas utilizadas incluem acurácia, precisão, recall e F1-score."
+    }
+    
+
+

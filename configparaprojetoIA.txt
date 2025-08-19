@@ -1,0 +1,251 @@
+COMANDOS:
+
+
+Parece que o Poetry não está instalado no seu sistema. O Poetry é uma ferramenta de gerenciamento de dependências e empacotamento para projetos Python². Aqui estão os passos para instalá-lo:
+
+1. **Instalar o pipx**: O pipx é uma ferramenta que permite instalar e gerenciar aplicativos Python em ambientes virtuais isolados. Primeiro, instale o pipx:
+   ```sh
+   python -m pip install --user pipx
+   python -m pipx ensurepath
+   ```
+
+2. **Instalar o Poetry**: Use o pipx para instalar o Poetry:
+   ```sh
+   pipx install poetry
+   ```
+
+3. **Verificar a Instalação**: Após a instalação, verifique se o Poetry foi instalado corretamente:
+   ```sh
+   poetry --version
+   ```
+
+Depois de instalar o Poetry, você deve conseguir criar um novo projeto com o comando:
+```sh
+poetry new projeto-ml
+```
+
+
+--------------------------------------------------------------
+Fazer o poetry criar a pasta do ambiente virtual dentro da pasta do projeto:
+
+-Abra o terminal na pasta do seu projeto;
+-Configure o poetry para criar o ambiente virtual dentro da pasta do projeto com seguinte comando:
+
+poetry config virtualenvs.in-project true
+
+por fim, criei o ambiente virtual com o comando:
+
+poetry shell
+
+O poetry criou uma pasta ".venv" dentro da pasta do projeto.
+
+
+Se não tiver o poetry instale com o seguinte comando:
+
+poetry install
+
+
+--------------------------------------------------------------
+Caso o ambiente virtual não for ativado, use esse comando:
+
+.\.venv\Scripts\activate
+
+--------------------------------------------------------------
+Limpar o terminal:
+
+cls
+
+
+--------------------------------------------------------------
+
+#Projeto Machine Learning - Acadêmica: Samara.V
+
+import streamlit as st
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+
+df = pd.read_csv("pizzas.csv")
+
+modelo = LinearRegression()
+
+x = df[["diametro"]]
+
+y = df[["preco"]]
+
+modelo.fit(x, y)
+
+st.title("Descubra o valor da sua fome")
+st.write("🍕" * 31)
+diametro = st.number_input("Informe o tamanho do diâmetro da sua pizza: ")
+st.write("🍕" * 31)
+if diametro:
+    preco_previsto = modelo.predict([[diametro]])[0][0]
+    st.write(f"O valor da sua pizza com diâmetro de {diametro:.2f} cm é de R${preco_previsto:.2f}.")
+
+#-------------------------------------------------------------------------------------------------------
+# Samara.v
+
+
+Daqui para baixo são aplicações feitas por mim
+
+
+--------------------------------------------------------------
+
+Para deixar o código bonitinho! :)
+# Função para exibir pizzas
+    def show_pizzas():
+        st.write("🍕" * 10)
+
+    # Exibir pizzas
+    show_pizzas()
+
+-------------------------------------------------------------
+
+# Função para exibir pizzas com animação
+
+import time
+
+    def show_pizzas():
+        for _ in range(10):
+            st.write("🍕" * 10)
+            time.sleep(0.5)
+            st.empty()
+
+    # Exibir pizzas
+    show_pizzas()
+
+--------------------------------------------------------------
+HTML:
+
+(MUDANDO A COR E O TAMANHO DAS LETRAS)
+
+st.markdown(f"<h5 style='color:yellow;'>O valor da sua pizza com diâmetro de {diametro:.2f} cm é de R${preco_previsto:.2f}.</h5>", unsafe_allow_html=True)
+
+--------------------------------------------------------------
+
+CSS:
+
+(MUDANDO A COR E O TAMANHO DAS LETRAS)
+
+
+
+
+--------------------------------------------------------------
+
+Pizza no final: (URL DA IMAGEM)
+
+https://png.pngtree.com/png-vector/20230408/ourmid/pngtree-delicious-pizza-creative-photography-png-image_6687083.png
+
+URL DA IMAGEM DO FUNDO:
+
+https://i.pinimg.com/736x/a4/03/ae/a403aea419adf1f1b92586c813f868fa.jpg
+
+
+URL:
+
+https://static.vecteezy.com/ti/fotos-gratis/p1/27671365-calabresa-pizza-em-a-de-madeira-borda-com-sombrio-iluminacao-e-preto-fundo-comida-e-entrega-conceito-generativo-ai-gratis-foto.jpg
+
+
+URL:
+
+https://img.freepik.com/fotos-gratis/vista-superior-comida-deliciosa-com-espaco-de-copia_23-2150873984.jpg
+
+
+URL: A MELHOR ATÉ O MOMENTO
+
+
+https://static.vecteezy.com/ti/fotos-gratis/p1/27671365-calabresa-pizza-em-a-de-madeira-borda-com-sombrio-iluminacao-e-preto-fundo-comida-e-entrega-conceito-generativo-ai-gratis-foto.jpg
+
+URL: A atual
+
+https://st4.depositphotos.com/4218696/27197/i/600/depositphotos_271977530-stock-photo-space-for-recipe-pizza-cooking.jpg
+
+--------------------------------------------------------------
+
+COLOCANDO IMAGEM NO FUNDO:
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-image: url("ENDEREÇO DA IMAGEM");
+        background-size: cover;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+--------------------------------------------------------------
+
+# Adicionar estilo CSS para alterar a cor do fundo
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: #f0f0f0; 
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+
+--------------------------------------------------------------
+
+MEU CÓDIGO FONTE DO PROJETO ML:
+
+
+
+#Projeto Machine Learning - Acadêmica: Samara.V
+
+import streamlit as st
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+import time
+
+
+df = pd.read_csv("pizzas.csv")
+
+modelo = LinearRegression()
+
+x = df[["diametro"]]
+
+y = df[["preco"]]
+
+modelo.fit(x, y)
+
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-image: url("https://st4.depositphotos.com/4218696/27197/i/600/depositphotos_271977530-stock-photo-space-for-recipe-pizza-cooking.jpg");
+        background-size: cover;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown("<h1 style='color:orange;'>Descubra o valor da sua fome🍕</h1>", unsafe_allow_html=True)
+st.write("---")
+diametro = st.number_input("Informe o tamanho do diâmetro da sua pizza: ")
+st.write("---")
+if diametro:
+    with st.spinner('A pizza está no forno🔥⏲️...'):
+        time.sleep(5)  # Simula o tempo de espera
+    preco_previsto = modelo.predict([[diametro]])[0][0]
+    st.success("Uhu! A pizza saiu do forno! 🍕")
+    st.markdown(f"<h5 style='color:orange;'>O valor da sua pizza com diâmetro de {diametro:.2f} cm é de R${preco_previsto:.2f}.</h5>", unsafe_allow_html=True)
+    st.image("https://png.pngtree.com/png-vector/20230408/ourmid/pngtree-delicious-pizza-creative-photography-png-image_6687083.png")
+    st.markdown("<h9 style='color:orange;'>Não perde tempo e vai matar o que está te matando!❤️</h9>", unsafe_allow_html=True)
+#-------------------------------------------------------------------------------------------------------
+# Samara.v
+
+
+PARA ABRIR O PROJETO, VÁ NO TERMINAL DO PRÓPRIO VSCODE E DIGITE:
+
+ streamlit run app.py
+
+
+
+--------------------------------------------------------------
